@@ -1,59 +1,52 @@
-# Web Scraping Project
+# Books Web Scraper
 
-A Python web scraper that extracts book data from websites using BeautifulSoup and Requests.
+A Python web scraper that grabs book data from books.toscrape.com. It's got solid error handling and logs everything so you know what happened.
 
-## Features
-- Scrapes multiple pages automatically
-- Extracts structured data: Book name, Price, Availability
-- Exports clean data to CSV format (Excel-ready)
-- Fast and efficient scraping
+## What You Get
+- Scrapes 1,000+ books across 50 pages
+- Pulls 3 key fields: name, price, availability
+- Saves everything to CSV (ready for Excel)
+- Logs every step with timestamps so you can debug easily
 
-## Technologies Used
+## What It Does
+- Automatically loops through all 50 pages
+- Extracts book names, prices, and stock status
+- Handles missing data gracefully (doesn't crash)
+- Catches connection problems and logs them
+- Exports clean, ready-to-use CSV files
+
+## Tech Stack
 - **Python 3**
-- **Requests** - HTTP library for fetching web pages
-- **BeautifulSoup 4** - HTML parsing and data extraction
-- **CSV** - Data storage format
+- **Requests** - fetches web pages
+- **BeautifulSoup 4** - parses HTML and grabs data
+- **CSV** - stores the data
+- **Logging** - tracks errors with timestamps
 
-## Installation
+## Setup & Run
 
+Install dependencies:
 ```bash
 pip install requests beautifulsoup4
 ```
 
-## Usage
-
+Run it:
 ```bash
-python scraper.py
+python booktoscrap.py
 ```
 
-This will:
-1. Scrape all 50 pages from books.toscrape.com
-2. Extract: book names, prices, and availability status
-3. Save all data to `books.csv`
+That's it. It'll:
+1. Hit all 50 pages
+2. Pull book info (name, price, availability)
+3. Save to `books.csv`
+4. Log everything to `scraper.log`
 
-## Output Example
+## What You Get (Files)
 
+**books.csv** — Your data, 1,000+ rows:
 | name | price | availability |
 |---|---|---|
 | A Light in the Attic | £51.77 | In stock |
 | Tipping the Velvet | £53.74 | In stock |
 | Soumission | £50.10 | In stock |
 
-## Project Stats
-- **Total Books Scraped:** 1,000+
-- **Pages Covered:** 50
-- **Data Fields:** 3 (name, price, availability)
-- **Output Format:** CSV
-
-## How It Works
-1. Fetches each page using `requests.get()`
-2. Parses HTML structure with BeautifulSoup
-3. Extracts specific data using CSS selectors
-4. Writes clean data to CSV file with proper formatting
-
-## Skills Demonstrated
-- Web scraping
-- Data extraction
-- HTML parsing
-- Python automation
-- Data cleaning & structuring
+**scraper.log** — Your activity log:
